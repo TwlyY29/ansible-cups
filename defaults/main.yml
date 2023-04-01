@@ -1,4 +1,6 @@
 ---
+ms_install_cups_enabled: False
+
 cups_lpadmin_users:
   - root
 cups_lpd: True
@@ -78,6 +80,6 @@ cups_etc_files_mode: 0644
 
 cups_expect_pkgs:
   - "expect"
-  - "python-pexpect"
+  - "python3-pexpect"
 cups_ppd_shared_location: "/opt/share/ppd"
 cups_ricoh_ppd_location: "/opt/OpenPrinting-Ricoh/ppds/Ricoh"

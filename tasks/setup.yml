@@ -1,0 +1,26 @@
+---
+- block:
+    - name: Include - Pre-Install steps
+      import_tasks: cups_pre_install.yml
+      become: yes
+
+    - name: Include - Install CUPS
+      import_tasks: cups_install.yml
+      become: yes
+
+    - name: Include - Configure CUPS
+      import_tasks: cups_configure.yml
+      become: yes
+
+    - name: Include - Install PPDs.
+      import_tasks: ppd_install.yml
+      become: yes
+
+    - name: Include - Uninstall any defined printers and install any printers and classes defined.
+      import_tasks: printer_and_class_install.yml
+      become: yes
+
+  always:
+    - name: Include - CUPS Cleanup
+      import_tasks: cups_cleanup.yml
+      become: yes
